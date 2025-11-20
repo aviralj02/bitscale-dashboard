@@ -128,3 +128,23 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.table-icon {
+  @apply p-1.5 rounded-lg shadow-[2px_2px_4px_0px_#0000000A] border border-[#F1F1EF] bg-white
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: white;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 100vh;
+  }
+}
