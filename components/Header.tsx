@@ -1,4 +1,4 @@
-import { Coins } from "lucide-react";
+import Coins from "./icons/Coins";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
       <div className="h-8.5 flex items-center">
         <div className="flex h-full items-center px-2 gap-3.5 bg-[#EDF3EC] rounded-[10.5px]">
           <div className="flex items-center gap-1.5 text-[#438361]">
-            <Coins className="size-3" />
+            <Coins />
             <span className="font-medium text-sm">450000/5500000</span>
           </div>
 
