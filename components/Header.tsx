@@ -1,9 +1,29 @@
+"use client";
+
+import { useIsMobile } from "@/hooks/use-mobile";
 import Coins from "./icons/Coins";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { PanelLeftOpen, PanelRightOpen } from "lucide-react";
+import { Button } from "./ui/button";
+import { useSidebar } from "./ui/sidebar";
 
 const Header = () => {
+  const isMobile = useIsMobile();
+  const { setOpenMobile } = useSidebar();
+
   return (
-    <div className="flex items-center justify-end py-[10.5px] gap-4 border-b px-[21px]">
+    <div className="flex items-center justify-end py-[10.5px] gap-4 border-b px-[21px] relative">
+      {isMobile && (
+        <Button
+          size={"icon"}
+          variant={"ghost"}
+          className="absolute left-2"
+          onClick={() => setOpenMobile(true)}
+        >
+          <PanelLeftOpen className="size-4" />
+        </Button>
+      )}
+
       <div className="h-8.5 flex items-center">
         <div className="flex h-full items-center px-2 gap-3.5 bg-[#EDF3EC] rounded-[10.5px]">
           <div className="flex items-center gap-1.5 text-[#438361]">

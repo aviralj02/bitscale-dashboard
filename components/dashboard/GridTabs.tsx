@@ -28,7 +28,7 @@ const GridTabs = () => {
 
   return (
     <Tabs defaultValue="my-grids" className="w-full mt-6 px-5">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between md:flex-row flex-col gap-4">
         <TabsList className="bg-inherit border-b border-gray-200 rounded-none text-sm gap-8 p-0 m-0!">
           {tabs.map((tab) => (
             <TabsTrigger
