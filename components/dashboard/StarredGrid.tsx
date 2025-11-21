@@ -104,11 +104,7 @@ const StarredGrid = () => {
       cell: () => <Ellipsis className="size-4" />,
     },
   ];
-  return (
-    <div className="px-5">
-      <DataTable columns={columns} data={mygridData.slice(0, 4)} />
-    </div>
-  );
+  return <DataTable columns={columns} data={mygridData.slice(0, 4)} />;
 };
 
 export default StarredGrid;

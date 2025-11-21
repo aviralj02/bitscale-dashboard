@@ -1,11 +1,8 @@
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "../ui/button";
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from "@radix-ui/react-tooltip";
+
 import { Building2, User, Plus } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const WelcomeUser = () => {
   const isMobile = useIsMobile();

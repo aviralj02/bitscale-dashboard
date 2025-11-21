@@ -101,11 +101,7 @@ const MyGrids = () => {
       cell: () => <Ellipsis className="size-4" />,
     },
   ];
-  return (
-    <div className="px-5">
-      <DataTable columns={columns} data={mygridData} />
-    </div>
-  );
+  return <DataTable columns={columns} data={mygridData} />;
 };
 
 export default MyGrids;
