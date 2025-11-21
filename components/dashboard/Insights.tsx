@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Check, Circle, FileCheckCorner } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
+import { Check, Circle, FileCheckCorner, Play } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface MockItem {
   id: string;
@@ -59,6 +58,14 @@ const Insights = () => {
 
   const currentItem = mockItems[activeIndex];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev !== mockItems.length - 1 ? prev + 1 : 0));
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [mockItems.length]);
+
   return (
     <div className="mt-[21px] w-full flex gap-6 lg:flex-row flex-col">
       <div className="px-5 py-4 w-full bg-[#E7F3F880] rounded-xl flex flex-col gap-4">
@@ -89,9 +96,13 @@ const Insights = () => {
             href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative block w-full"
+            className="block"
           >
             <div className="relative w-[147px] rounded-2xl overflow-hidden">
+              <div className="absolute p-2 bg-white rounded-full w-fit border-[0.5px] shadow-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <Play className="size-3" fill="#0A0A0A" />
+              </div>
+
               <img
                 src={currentItem.image}
                 alt={currentItem.title}

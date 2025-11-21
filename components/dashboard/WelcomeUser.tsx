@@ -40,6 +40,7 @@ const WelcomeUser = () => {
                 <Button
                   className="font-medium cursor-pointer"
                   variant={"outline"}
+                  onClick={openDialog}
                 >
                   <User className="size-4 text-[#8F65AF]" />
                 </Button>

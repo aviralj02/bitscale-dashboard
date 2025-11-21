@@ -32,7 +32,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="overflow-y-auto max-h-72 rounded-md scrollbar">
+    <div className="overflow-y-auto max-h-[calc(100vh-460px)] rounded-md scrollbar">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
