@@ -3,9 +3,12 @@ import { Button } from "../ui/button";
 
 import { Building2, User, Plus } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import FindPeopleDialog from "../FindPeopleDialog";
+import { useDialog } from "@/hooks/use-dialog";
 
 const WelcomeUser = () => {
   const isMobile = useIsMobile();
+  const { open, closeDialog, openDialog } = useDialog();
 
   return (
     <div className="w-full flex items-start justify-between">
@@ -58,7 +61,11 @@ const WelcomeUser = () => {
             <Button className="font-medium cursor-pointer" variant={"outline"}>
               <Building2 className="size-4 text-[#438361]" /> Find Companies
             </Button>
-            <Button className="font-medium cursor-pointer" variant={"outline"}>
+            <Button
+              className="font-medium cursor-pointer"
+              variant={"outline"}
+              onClick={openDialog}
+            >
               <User className="size-4 text-[#8F65AF]" /> Find People
             </Button>
             <Button className="font-medium cursor-pointer" size={"sm"}>
@@ -67,6 +74,8 @@ const WelcomeUser = () => {
           </>
         )}
       </div>
+
+      <FindPeopleDialog open={open} onOpenChange={closeDialog} />
     </div>
   );
 };
